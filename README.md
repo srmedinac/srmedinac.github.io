@@ -1,7 +1,7 @@
 ### Hello!
 
 
-I am a Systems and Computing Engineer from Universidad Nacional de Colombia. MSc. (c) in Systems and Computing Engineering at UNAL, where I am currently working on developing an automated, robust, and interpretable deep learning approach for prostate cancer grading using histopathology images.
+I am a Systems and Computing Engineer from Universidad Nacional de Colombia. MSc. (c) in Systems and Computing Engineering at UNAL, where I am currently working on developing an automated, robust and interpretable deep learning approach for prostate cancer grading using histopathology images.
 
 ### Interests
 
