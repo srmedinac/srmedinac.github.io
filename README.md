@@ -1,16 +1,22 @@
-### Hi there 👋
+### Hello!
 
-<!--
-**srmedinac/srmedinac** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+Systems and Computing Engineer at Universidad Nacional de Colombia. MSc. (c) in Systems and Computing Engineering at UNAL, where I am currently working on developing an automated, robust, and interpretable deep learning approach for prostate cancer grading using histopathology images.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+### Interests
+
+- Deep Learning
+- Quantum Computing
+- Medical Imaging
+- Physics
+- Tennis
+
+### Research Group
+
+- [Mindlab](https://ingenieria.unal.edu.co/mindlab/)
+- [Mindlab - Computational Pathology GitHub Org.](https://github.com/MindLab-DP)
+
+### 📫 Reach me at 
+[Twitter](https://twitter.com/GradientTape)
+
+[Linkedin](https://www.linkedin.com/in/srmedinac/)
