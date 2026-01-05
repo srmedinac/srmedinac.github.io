@@ -5,26 +5,5 @@
         "date": "2025-01-05",
         "excerpt": "A detailed analysis of our Clinical Cancer Research paper on using artificial intelligence to predict which prostate cancer patients will benefit from docetaxel chemotherapy.",
         "tags": ["computational pathology", "prostate cancer", "precision oncology", "APIC"]
-    },
-    {
-        "title": "Understanding Deep Learning Fundamentals",
-        "slug": "deep-learning-fundamentals",
-        "date": "2024-01-15",
-        "excerpt": "A comprehensive overview of the key concepts in deep learning, from neural networks to optimization techniques.",
-        "tags": ["deep learning", "AI", "research"]
-    },
-    {
-        "title": "My Recent Paper on Computer Vision",
-        "slug": "computer-vision-paper",
-        "date": "2024-02-20",
-        "excerpt": "Discussing the methodology and findings from our latest research on improving object detection in challenging conditions.",
-        "tags": ["computer vision", "publication", "research"]
-    },
-    {
-        "title": "Thoughts on Reproducibility in ML Research",
-        "slug": "ml-reproducibility",
-        "date": "2024-03-10",
-        "excerpt": "Why reproducibility matters in machine learning research and practical tips for making your work more reproducible.",
-        "tags": ["machine learning", "best practices", "research"]
     }
 ]
