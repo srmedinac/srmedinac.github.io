@@ -1,5 +1,12 @@
 [
     {
+        "title": "Deep Dive: AI Classifier to Predict Docetaxel Benefit in Prostate Cancer",
+        "slug": "apic-docetaxel-prediction",
+        "date": "2025-01-05",
+        "excerpt": "A detailed analysis of our Clinical Cancer Research paper on using artificial intelligence to predict which prostate cancer patients will benefit from docetaxel chemotherapy.",
+        "tags": ["computational pathology", "prostate cancer", "precision oncology", "APIC"]
+    },
+    {
         "title": "Understanding Deep Learning Fundamentals",
         "slug": "deep-learning-fundamentals",
         "date": "2024-01-15",
