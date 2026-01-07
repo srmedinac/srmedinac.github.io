@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Sebastian Medina</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Publications by Sebastian Medina in computational pathology, AI-based precision oncology, and machine learning for medical imaging.">
+    <meta name="author" content="Sebastian Medina">
+    <meta name="keywords" content="Sebastian Medina, publications, computational pathology, AI, machine learning, prostate cancer, precision oncology">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Publications - Sebastian Medina">
+    <meta property="og:description" content="Publications in computational pathology and AI-based precision oncology">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://srmedinac.github.io/publications.html">
+    <meta property="og:site_name" content="Sebastian Medina">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Publications - Sebastian Medina">
+    <meta name="twitter:description" content="Publications in computational pathology and AI-based precision oncology">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://srmedinac.github.io/publications.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">Sebastian Medina</a>
+            <ul class="nav-menu">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="publications.html" class="active">Publications</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section">
+        <div class="container">
+            <h2>Publications</h2>
+            <p class="section-intro">Peer-reviewed publications and conference presentations</p>
+
+            <div class="pub-list">
+                <!-- Publication 1: APIC/Docetaxel -->
+                <article class="pub-card">
+                    <div class="pub-thumbnail">
+                        <div class="pub-thumbnail-placeholder">
+                            <i class="fas fa-microscope"></i>
+                            <span>Figure placeholder</span>
+                        </div>
+                    </div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">A Computational Pathology Model to Predict Docetaxel Benefit in Localized High-Risk and Metastatic Prostate Cancer</h3>
+                        <p class="pub-authors"><strong>Sebastian Medina</strong>, Naofumi Tokuyama, Kamal Hammouda, Andrew J Armstrong, Robert B Den, Daniel E Spratt, Jonathan E Rosenberg, Himanshu Joshi, Anthony V D'Amico, Hajime Yaegashi, Tomoya Fukawa, Mineaki Kitamura, Noriaki Tokuda, Jose Salguero, Eduardo Romero, Renu Dhamdhere, and Anant Madabhushi</p>
+                        <p class="pub-venue"><i class="fas fa-journal-whills"></i> Clinical Cancer Research, 2025</p>
+                        <div class="pub-abstract">
+                            <p><strong>Purpose:</strong> For patients with high-risk localized (HRL) and metastatic hormone-sensitive prostate cancer (mHSPC), docetaxel addition to androgen deprivation therapy (ADT) improves outcomes, but identifying which patients benefit most remains challenging.</p>
+                            <p><strong>Methods:</strong> We developed and validated an AI-based computational pathology (APIC) model using H&E-stained histopathology images from phase 3 clinical trials. The model extracts morphological features from tissue microenvironment to predict treatment response.</p>
+                            <p><strong>Results:</strong> APIC achieved clinically significant risk stratification across CHAARTED (N=219) and NRG/RTOG 0521 (N=158) trials. Patients classified as APIC-high showed 20%+ absolute survival differences when treated with docetaxel plus ADT versus ADT alone. The model identifies patient subgroups with differential treatment benefit—information invisible to conventional pathology review.</p>
+                            <p><strong>Conclusions:</strong> APIC provides a novel AI-derived predictive biomarker for treatment selection in advanced prostate cancer, enabling precision oncology approaches using standard diagnostic tissue slides.</p>
+                        </div>
+                        <div class="pub-links">
+                            <a href="https://doi.org/10.1158/1078-0432.CCR-25-3327" class="btn-pub" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
+                            <a href="blog/apic-docetaxel-prediction.html" class="btn-pub btn-pub-secondary"><i class="fas fa-blog"></i> Blog Post</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Publication 2: WiSDoM/PLOS ONE -->
+                <article class="pub-card">
+                    <div class="pub-thumbnail">
+                        <div class="pub-thumbnail-placeholder">
+                            <i class="fas fa-brain"></i>
+                            <span>Figure placeholder</span>
+                        </div>
+                    </div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">Interpretable Weakly-Supervised Learning Through Kernel Density Matrices: A Digital Pathology Use Case</h3>
+                        <p class="pub-authors"><strong>Sebastian Medina</strong>, Eduardo Romero, Angel Cruz-Roa, Fabio A González</p>
+                        <p class="pub-venue"><i class="fas fa-journal-whills"></i> PLOS ONE, 2025</p>
+                        <div class="pub-abstract">
+                            <p><strong>Background:</strong> Weakly-supervised learning from whole-slide images presents fundamental challenges: models must learn from slide-level labels without knowing which regions contain diagnostic information. Traditional approaches sacrifice either accuracy or interpretability.</p>
+                            <p><strong>Methods:</strong> We introduce WiSDoM (Weakly-Supervised learning through Density Matrices), a framework that leverages kernel density matrices—a quantum-inspired probability representation—to aggregate patch-level features into slide-level predictions while maintaining interpretability. The method learns prototypical tissue patterns and provides probabilistic explanations for predictions.</p>
+                            <p><strong>Results:</strong> On the PANDA Challenge dataset for prostate cancer grading, WiSDoM achieved κ = 0.930, matching state-of-the-art attention-based methods while providing superior interpretability. The learned prototypes correspond to recognizable histological patterns, and prediction confidence correlates with pathologist agreement.</p>
+                            <p><strong>Conclusions:</strong> Kernel density matrices enable interpretable weakly-supervised learning without sacrificing accuracy. The framework's uncertainty quantification and prototype-based explanations make it suitable for clinical decision support in computational pathology.</p>
+                        </div>
+                        <div class="pub-links">
+                            <a href="https://doi.org/10.1371/journal.pone.0335826" class="btn-pub" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
+                            <a href="blog/wisdom-kernel-density-matrices.html" class="btn-pub btn-pub-secondary"><i class="fas fa-blog"></i> Blog Post</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Publication 3: Fundus/Kidney360 -->
+                <article class="pub-card">
+                    <div class="pub-thumbnail">
+                        <div class="pub-thumbnail-placeholder">
+                            <i class="fas fa-eye"></i>
+                            <span>Figure placeholder</span>
+                        </div>
+                    </div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">Fundus Photograph-Derived Computational Features Predict Risk of Cardiovascular Events in Chronic Renal Insufficiency Cohort</h3>
+                        <p class="pub-authors">Renu Dhamdhere, Gowtham Modanwal, Pranjal Mutha, <strong>Sebastian Medina</strong>, Mahboob Rahman, Lawrence J Appel, Harold I Feldman, Tobias Elze, Nazlee Zebardast, and Anant Madabhushi</p>
+                        <p class="pub-venue"><i class="fas fa-journal-whills"></i> Kidney360, 2025</p>
+                        <div class="pub-abstract">
+                            <p><strong>Background:</strong> Chronic kidney disease (CKD) significantly increases cardiovascular disease (CVD) risk. The retinal vasculature offers a non-invasive window into systemic vascular health, but traditional ophthalmologic assessment provides limited prognostic information.</p>
+                            <p><strong>Methods:</strong> We developed computational methods to extract quantitative features from fundus photographs of participants in the Chronic Renal Insufficiency Cohort (CRIC) study. Features captured vascular morphology, tortuosity, branching patterns, and texture characteristics.</p>
+                            <p><strong>Results:</strong> AI-derived retinal features predicted incident cardiovascular events in CKD patients, demonstrating that fundus photography can serve as a risk stratification tool. The approach identifies patients at elevated CVD risk who may benefit from intensified preventive interventions.</p>
+                            <p><strong>Conclusions:</strong> Computational analysis of routine fundus photographs provides prognostic information for cardiovascular risk in CKD, demonstrating the potential of AI to extract clinically actionable information from standard ophthalmic imaging.</p>
+                        </div>
+                        <div class="pub-links">
+                            <a href="https://doi.org/10.34067/kid.0000000955" class="btn-pub" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Publication 4: AACR 3D Glandular -->
+                <article class="pub-card">
+                    <div class="pub-thumbnail">
+                        <div class="pub-thumbnail-placeholder">
+                            <i class="fas fa-cubes"></i>
+                            <span>Figure placeholder</span>
+                        </div>
+                    </div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">AI-Derived Features of 3D Glandular Networks Associated with Biochemical Recurrence Post Radical Prostatectomy</h3>
+                        <p class="pub-authors">Jose Salguero, Heba Abdeltawab, Kamal Hammouda, <strong>Sebastian Medina</strong>, George Rodriguez, Soroush Rais-Bahrami, Anant Madabhushi</p>
+                        <p class="pub-venue"><i class="fas fa-users"></i> AACR Annual Meeting 2024</p>
+                        <div class="pub-abstract">
+                            <p><strong>Background:</strong> Prostate cancer exhibits complex three-dimensional glandular architecture that may contain prognostic information not captured in standard 2D histopathology sections. Understanding 3D tissue organization could improve prediction of biochemical recurrence (BCR) after radical prostatectomy.</p>
+                            <p><strong>Methods:</strong> We developed AI methods to reconstruct and analyze 3D glandular network morphology from serial tissue sections. Features captured network connectivity, branching complexity, and spatial organization of prostatic glands.</p>
+                            <p><strong>Results:</strong> 3D glandular network features showed significant associations with BCR outcome, identifying architectural patterns that correlate with likelihood of disease recurrence after surgery.</p>
+                            <p><strong>Conclusions:</strong> AI-derived 3D morphological features provide novel prognostic biomarkers for prostate cancer that complement traditional 2D pathology assessment. The approach demonstrates the value of computational reconstruction for extracting clinically relevant tissue architecture information.</p>
+                        </div>
+                        <div class="pub-links">
+                            <a href="https://doi.org/10.1158/1538-7445.AM2024-3516" class="btn-pub" target="_blank"><i class="fas fa-external-link-alt"></i> DOI</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sebastian Medina. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
