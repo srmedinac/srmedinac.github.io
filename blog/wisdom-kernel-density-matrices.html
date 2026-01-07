@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiSDoM: Interpretable Weakly-Supervised Learning Through Kernel Density Matrices - Sebastian Medina</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="A mathematical deep dive into WiSDoM, our PLOS ONE paper introducing kernel density matrices for interpretable weakly-supervised learning in digital pathology.">
+    <meta name="author" content="Sebastian Medina">
+    <meta name="keywords" content="kernel density matrices, weakly-supervised learning, interpretable AI, digital pathology, prostate cancer, Gleason grading, WiSDoM, deep learning">
+
+    <!-- Highwire Press / Google Scholar Meta Tags -->
+    <meta name="citation_title" content="Interpretable weakly-supervised learning through kernel density matrices: A digital pathology use case">
+    <meta name="citation_author" content="Medina, Sebastian">
+    <meta name="citation_author" content="Romero, Eduardo">
+    <meta name="citation_author" content="Cruz-Roa, Angel">
+    <meta name="citation_author" content="Gonzalez, Fabio A.">
+    <meta name="citation_publication_date" content="2025">
+    <meta name="citation_journal_title" content="PLOS ONE">
+    <meta name="citation_issn" content="1932-6203">
+    <meta name="citation_doi" content="10.1371/journal.pone.0335826">
+    <meta name="citation_pdf_url" content="https://doi.org/10.1371/journal.pone.0335826">
+
+    <!-- Dublin Core Meta Tags for Altmetric -->
+    <meta name="DC.identifier" content="doi:10.1371/journal.pone.0335826">
+    <meta name="DC.title" content="Interpretable weakly-supervised learning through kernel density matrices: A digital pathology use case">
+    <meta name="DC.creator" content="Medina, Sebastian">
+    <meta name="DC.date" content="2025">
+    <meta name="DC.publisher" content="PLOS ONE">
+    <meta name="DC.type" content="article">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="WiSDoM: Interpretable Weakly-Supervised Learning Through Kernel Density Matrices">
+    <meta property="og:description" content="Mathematical deep dive into kernel density matrices for interpretable medical image classification.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://srmedinac.github.io/blog/wisdom-kernel-density-matrices.html">
+    <meta property="og:site_name" content="Sebastian Medina">
+    <meta property="article:published_time" content="2025-01-06">
+    <meta property="article:author" content="Sebastian Medina">
+    <meta property="article:tag" content="kernel methods">
+    <meta property="article:tag" content="weakly-supervised learning">
+    <meta property="article:tag" content="interpretability">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WiSDoM: Kernel Density Matrices for Interpretable Medical AI">
+    <meta name="twitter:description" content="Mathematical deep dive into our PLOS ONE paper on interpretable weakly-supervised learning.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://srmedinac.github.io/blog/wisdom-kernel-density-matrices.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- MathJax for LaTeX Equations -->
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- Structured Data for Search Engines and Altmetric -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "WiSDoM: Interpretable Weakly-Supervised Learning Through Kernel Density Matrices",
+      "author": {
+        "@type": "Person",
+        "name": "Sebastian Medina",
+        "url": "https://srmedinac.github.io",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Georgia Institute of Technology and Emory University"
+        }
+      },
+      "datePublished": "2025-01-06",
+      "description": "A mathematical deep dive into WiSDoM, introducing kernel density matrices for interpretable weakly-supervised learning in digital pathology.",
+      "keywords": ["kernel density matrices", "weakly-supervised learning", "interpretability", "digital pathology", "prostate cancer"],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://srmedinac.github.io/blog/wisdom-kernel-density-matrices.html"
+      },
+      "about": {
+        "@type": "ScholarlyArticle",
+        "@id": "https://doi.org/10.1371/journal.pone.0335826",
+        "name": "Interpretable weakly-supervised learning through kernel density matrices: A digital pathology use case",
+        "headline": "Interpretable weakly-supervised learning through kernel density matrices: A digital pathology use case",
+        "author": [
+          {"@type": "Person", "name": "Sebastian Medina"},
+          {"@type": "Person", "name": "Eduardo Romero"},
+          {"@type": "Person", "name": "Angel Cruz-Roa"},
+          {"@type": "Person", "name": "Fabio A. Gonzalez"}
+        ],
+        "datePublished": "2025",
+        "isPartOf": {
+          "@type": "PublicationIssue",
+          "isPartOf": {
+            "@type": "Periodical",
+            "name": "PLOS ONE",
+            "issn": "1932-6203",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Public Library of Science"
+            }
+          }
+        },
+        "url": "https://doi.org/10.1371/journal.pone.0335826",
+        "sameAs": [
+          "https://doi.org/10.1371/journal.pone.0335826",
+          "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0335826"
+        ],
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "doi",
+          "value": "10.1371/journal.pone.0335826"
+        }
+      }
+    }
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Sebastian Medina</div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#publications">Publications</a></li>
+                <li><a href="../index.html#blog">Blog</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <article class="blog-post">
+            <a href="../index.html#blog" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Blog
+            </a>
+
+            <div class="blog-post-header">
+                <h1>WiSDoM: Interpretable Weakly-Supervised Learning Through Kernel Density Matrices</h1>
+                <div class="blog-post-meta">
+                    <span><i class="fas fa-calendar"></i> January 2025</span>
+                    <span><i class="fas fa-tag"></i> kernel methods, weakly-supervised learning, interpretability, digital pathology</span>
+                </div>
+            </div>
+
+            <div class="blog-post-content">
+                <h2>A Mathematical Framework for Interpretable Medical AI</h2>
+
+                <p><strong>Authors:</strong> Sebastian Medina, Eduardo Romero, Angel Cruz-Roa, Fabio A. Gonzalez</p>
+
+                <p><strong>Published in:</strong> PLOS ONE (2025) | <a href="https://doi.org/10.1371/journal.pone.0335826" target="_blank">doi:10.1371/journal.pone.0335826</a></p>
+
+                <h2>The Challenge: Supervision vs. Interpretability</h2>
+
+                <p>
+                    Deep learning in computational pathology faces a fundamental tradeoff. <strong>Fully-supervised methods</strong> require pixel-level or patch-level annotations that are expensive and time-consuming to obtain. <strong>Weakly-supervised methods</strong> use only slide-level labels but sacrifice interpretability, often producing "black box" predictions that clinicians cannot trust.
+                </p>
+
+                <p>
+                    We asked: <em>Can we design a unified framework that works across both supervision modes while maintaining interpretability and uncertainty quantification?</em>
+                </p>
+
+                <p>
+                    Our answer is <strong>WiSDoM</strong> (Weakly-Supervised Density Matrices), a framework that leverages quantum-inspired mathematics to model probability distributions over inputs and outputs, enabling both interpretable predictions and principled uncertainty estimates.
+                </p>
+
+                <h2>Mathematical Foundation: Density Matrices</h2>
+
+                <p>
+                    Density matrices originate from quantum mechanics, where they describe the statistical state of a quantum system. A system can be in a <em>statistical mixture</em> of different states $|\psi_i\rangle$, each with probability $p_i$. The density matrix $\rho$ encapsulates this uncertainty:
+                </p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$\rho = \sum_{i}^{N} p_i |\psi_i\rangle\langle\psi_i|$$
+                </p>
+
+                <p>
+                    where $\langle\psi_i|$ is the conjugate transpose of $|\psi_i\rangle$, and the probabilities satisfy $\sum_i p_i = 1$.
+                </p>
+
+                <p>
+                    The power of density matrices lies in computing measurement probabilities. Given a state $|\psi\rangle$, the probability of finding the system (described by $\rho$) in that state is:
+                </p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$p(|\psi\rangle | \rho) = \text{Tr}(|\psi\rangle\langle\psi|\rho) = \langle\psi|\rho|\psi\rangle = \sum_{i}^{N} p_i |\langle\psi|\psi_i\rangle|^2$$
+                </p>
+
+                <p>
+                    This formulation elegantly handles <strong>uncertainty</strong>: the probability depends on how similar the query state $|\psi\rangle$ is to the mixture components $|\psi_i\rangle$, weighted by their probabilities $p_i$.
+                </p>
+
+                <h2>Kernel Density Matrices (KDM)</h2>
+
+                <p>
+                    We extend density matrices to machine learning by defining them in a <strong>Reproducing Kernel Hilbert Space (RKHS)</strong>. A Kernel Density Matrix is a triplet:
+                </p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$\rho = (C, \mathbf{p}, k_\theta)$$
+                </p>
+
+                <p>where:</p>
+                <ul>
+                    <li>$C = \{x^{(1)}, \ldots, x^{(m)}\} \subseteq \mathbb{X}$ are the <strong>components</strong> (prototype examples)</li>
+                    <li>$\mathbf{p} = (p_1, \ldots, p_m) \in \mathbb{R}^m$ are the <strong>mixture weights</strong> with $\sum_i p_i = 1$</li>
+                    <li>$k_\theta: \mathbb{X} \times \mathbb{X} \rightarrow \mathbb{R}$ is a <strong>kernel function</strong> with $k(x, x) = 1$</li>
+                </ul>
+
+                <p>
+                    If $\phi: \mathbb{R}^n \rightarrow \mathcal{H}$ maps inputs to the RKHS $\mathcal{H}$, then $\rho$ represents a density matrix with components $|\psi_i\rangle = |\phi(x^{(i)})\rangle$.
+                </p>
+
+                <h3>The Projection Function</h3>
+
+                <p>The projection function measures how well a new input $x$ aligns with the learned distribution:</p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$f_\rho(x) = \sum_{x^{(i)} \in C} p_i \cdot k_\theta^2(x, x^{(i)})$$
+                </p>
+
+                <p>
+                    This can be transformed into a proper probability density function by multiplying by a normalization constant $\mathcal{M}_k$:
+                </p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$\hat{f}_\rho(x) = \mathcal{M}_k \cdot f_\rho(x)$$
+                </p>
+
+                <h2>KDM Inference: From Inputs to Outputs</h2>
+
+                <p>
+                    The key insight is using KDMs to model <strong>joint probability distributions</strong> $p(x', y')$ of inputs and outputs, then performing inference to predict output distributions from new inputs.
+                </p>
+
+                <p>We define three KDMs:</p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$\rho_x = \left(\{x^{(i)}\}_{i=1\ldots m}, (p_i)_{i=1\ldots m}, k_\mathbb{X}\right)$$
+                </p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$\rho_{x',y'} = \left(\{(x'^{(i)}, y'^{(i)})\}_{i=1\ldots m'}, (p'_i)_{i=1\ldots m'}, k_\mathbb{X} \otimes k_\mathbb{Y}\right)$$
+                </p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$\rho_y = \left(\{y'^{(i)}\}_{i=1\ldots m'}, (p''_i)_{i=1\ldots m'}, k_\mathbb{Y}\right)$$
+                </p>
+
+                <p>
+                    The inference operation transforms $\rho_x$ through the joint KDM $\rho_{x',y'}$ to produce output probabilities $p''_i$:
+                </p>
+
+                <p style="text-align: center; margin: 1.5rem 0; background-color: #f8f9fa; padding: 1rem; border-radius: 8px;">
+                    $$p''_i = \sum_{\ell=1}^{m} \frac{p_\ell \cdot p'_i \cdot (k_\mathbb{X}(x^{(\ell)}, x'^{(i)}))^2}{\sum_{j=1}^{m'} p'_j \cdot (k_\mathbb{X}(x^{(\ell)}, x'^{(j)}))^2}$$
+                </p>
+
+                <p>
+                    This is the <strong>core equation</strong> of WiSDoM. It computes how much each prototype $(x'^{(i)}, y'^{(i)})$ contributes to the prediction, weighted by kernel similarity to the input.
+                </p>
+
+                <h3>Expected Value and Variance</h3>
+
+                <p>From the output distribution $\rho_y$, we compute predictions with uncertainty:</p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$\mathbb{E}[\hat{y}]_i = \sum_{j=1}^{m} p''_{ij} \cdot y'_j$$
+                </p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$\text{Var}[\hat{y}]_i = \mathbb{E}[\hat{y}^2]_i - (\mathbb{E}[\hat{y}]_i)^2 = \sum_{j=1}^{m} p''_{ij} \cdot y'^2_j - \left(\sum_{j=1}^{m} p''_{ij} \cdot y'_j\right)^2$$
+                </p>
+
+                <p>
+                    The variance provides a <strong>built-in uncertainty estimate</strong> for each prediction, without requiring ensemble methods or dropout.
+                </p>
+
+                <h2>WiSDoM Architecture</h2>
+
+                <h3>Fully-Supervised Mode</h3>
+
+                <p>For patch-level Gleason pattern classification:</p>
+
+                <ol>
+                    <li><strong>Initialize:</strong> Sample $m$ patch-label pairs from training data to form $\rho_{x',y'}$</li>
+                    <li><strong>Encode:</strong> Pass input patch through CNN backbone (ConvNeXT) to get 128-dimensional feature vector $z = Z(x)$</li>
+                    <li><strong>Create input KDM:</strong> $\rho_x = (\{z\}, (1), k_\mathbb{X})$ (single component with weight 1)</li>
+                    <li><strong>Infer:</strong> Compute output probabilities using the inference equation</li>
+                    <li><strong>Predict:</strong> For classification, take $\arg\max(p'')$; for ordinal regression, compute expected value</li>
+                </ol>
+
+                <h3>Weakly-Supervised Mode: Local-Global Attention</h3>
+
+                <p>
+                    For whole-slide ISUP grade prediction, we treat each slide as a "bag" of patches with a single slide-level label. The key innovation is using attention weights as the mixture probabilities $p_i$ in the input KDM.
+                </p>
+
+                <p>The local-global attention mechanism works as follows:</p>
+
+                <p><strong>Step 1: Local context</strong></p>
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$z^{\text{local}}_j = \text{MLP}_1(x_j)$$
+                </p>
+
+                <p><strong>Step 2: Global context</strong></p>
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$z^{\text{global}} = \frac{1}{k} \sum_{j=1}^{k} z^{\text{local}}_j$$
+                </p>
+
+                <p><strong>Step 3: Attention weights</strong></p>
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$z^{\text{attn}}_j = \text{Softmax}\left(\text{MLP}_2\left(z^{\text{local}}_j, z^{\text{global}}\right)\right)$$
+                </p>
+
+                <p>
+                    These attention weights $z^{\text{attn}}_j$ become the mixture probabilities in the input KDM:
+                </p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$\rho_x = \left(\{z_j\}_{j=1\ldots k}, (z^{\text{attn}}_j)_{j=1\ldots k}, k_\mathbb{X}\right)$$
+                </p>
+
+                <p>
+                    This elegantly connects attention weights to probabilistic inference: patches with higher attention contribute more to the final prediction through the kernel density matrix framework.
+                </p>
+
+                <h2>Ordinal Regression for Cancer Grading</h2>
+
+                <p>
+                    Cancer grading is inherently ordinal: Gleason patterns 3, 4, 5 represent increasing severity. WiSDoM handles this by converting categorical labels to continuous values:
+                </p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$y_{\text{ordinal}} = \frac{y_{\text{categorical}}}{N_{\text{labels}}}$$
+                </p>
+
+                <p>The loss function combines mean squared error with variance penalization:</p>
+
+                <p style="text-align: center; margin: 1.5rem 0;">
+                    $$\mathcal{L} = \frac{1}{N} \sum_{i=1}^{N} \left(\mathbb{E}[\hat{y}]_i - y_i\right)^2 + \alpha \cdot \text{Var}[\hat{y}]_i$$
+                </p>
+
+                <p>
+                    The variance penalty $\alpha$ encourages confident predictions while still allowing the model to express uncertainty when appropriate.
+                </p>
+
+                <h2>Key Results</h2>
+
+                <p>We validated WiSDoM on the <strong>PANDA Challenge</strong> dataset (10,616 prostate whole-slide images):</p>
+
+                <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0;">
+                    <thead>
+                        <tr style="background-color: var(--bg-light);">
+                            <th style="border: 1px solid var(--border-color); padding: 0.75rem; text-align: left;">Task</th>
+                            <th style="border: 1px solid var(--border-color); padding: 0.75rem; text-align: left;">Cohen's $\kappa$</th>
+                            <th style="border: 1px solid var(--border-color); padding: 0.75rem; text-align: left;">Accuracy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid var(--border-color); padding: 0.75rem;">Patch-level Gleason Classification</td>
+                            <td style="border: 1px solid var(--border-color); padding: 0.75rem;">0.896</td>
+                            <td style="border: 1px solid var(--border-color); padding: 0.75rem;">90.1%</td>
+                        </tr>
+                        <tr style="background-color: var(--bg-light);">
+                            <td style="border: 1px solid var(--border-color); padding: 0.75rem;">Patch-level Ordinal Regression</td>
+                            <td style="border: 1px solid var(--border-color); padding: 0.75rem;">0.906</td>
+                            <td style="border: 1px solid var(--border-color); padding: 0.75rem;">89.0%</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid var(--border-color); padding: 0.75rem;">Whole-Slide ISUP Grading</td>
+                            <td style="border: 1px solid var(--border-color); padding: 0.75rem;">0.900</td>
+                            <td style="border: 1px solid var(--border-color); padding: 0.75rem;">66.0%</td>
+                        </tr>
+                        <tr style="background-color: var(--bg-light);">
+                            <td style="border: 1px solid var(--border-color); padding: 0.75rem;"><strong>With Variance Filtering ($\sigma^2 < 0.05$)</strong></td>
+                            <td style="border: 1px solid var(--border-color); padding: 0.75rem;"><strong>0.930</strong></td>
+                            <td style="border: 1px solid var(--border-color); padding: 0.75rem;"><strong>73.0%</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>
+                    <strong>The $\kappa = 0.930$ exceeds the top PANDA Challenge submission ($\kappa = 0.921$)</strong>, achieved using a single model rather than ensemble methods.
+                </p>
+
+                <h3>Prototype Interpretability</h3>
+
+                <p>
+                    The learned prototypes in $\rho_{x',y'}$ provide inherent interpretability. Blind assessment by three resident pathologists and one expert urological pathologist achieved <strong>$\kappa = 0.88$ agreement</strong> with model classifications, demonstrating that learned representations correspond to recognized diagnostic patterns.
+                </p>
+
+                <h2>Why Kernel Density Matrices Work</h2>
+
+                <p>Several properties make KDMs uniquely suited for medical imaging:</p>
+
+                <ol>
+                    <li><strong>Differentiability:</strong> All KDM operations are differentiable, enabling end-to-end training with gradient descent</li>
+                    <li><strong>Probabilistic semantics:</strong> Predictions are proper probability distributions, not ad-hoc scores</li>
+                    <li><strong>Built-in uncertainty:</strong> Variance emerges naturally from the probabilistic framework</li>
+                    <li><strong>Prototype interpretability:</strong> The components of $\rho_{x',y'}$ serve as interpretable exemplars</li>
+                    <li><strong>Unified framework:</strong> The same mathematical structure handles both fully-supervised and weakly-supervised learning</li>
+                </ol>
+
+                <h2>Clinical Implications</h2>
+
+                <p>WiSDoM addresses key requirements for clinical AI deployment:</p>
+
+                <ul>
+                    <li><strong>Transparency:</strong> Predictions are explainable through prototype matching and attention heatmaps</li>
+                    <li><strong>Uncertainty awareness:</strong> High-variance predictions can be flagged for expert review</li>
+                    <li><strong>Annotation efficiency:</strong> Weakly-supervised mode requires only slide-level labels, reducing annotation burden by orders of magnitude</li>
+                    <li><strong>Data efficiency:</strong> Competitive performance with smaller datasets through ordinal regression that leverages inherent grade structure</li>
+                </ul>
+
+                <h2>Code and Data</h2>
+
+                <p>
+                    The WiSDoM implementation is available at: <a href="https://github.com/srmedinac/WiSDoM" target="_blank">github.com/srmedinac/WiSDoM</a>
+                </p>
+
+                <p>
+                    The PANDA dataset is publicly available at: <a href="https://www.kaggle.com/competitions/prostate-cancer-grade-assessment" target="_blank">Kaggle PANDA Challenge</a>
+                </p>
+
+                <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border-color);">
+
+                <p><strong>Reference:</strong></p>
+                <p>
+                    Medina S, Romero E, Cruz-Roa A, Gonzalez FA. Interpretable weakly-supervised learning through kernel density matrices: A digital pathology use case. <em>PLoS One</em>. 2025;20(11):e0335826.
+                    <a href="https://doi.org/10.1371/journal.pone.0335826" target="_blank">doi:10.1371/journal.pone.0335826</a>
+                </p>
+            </div>
+        </article>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Sebastian Medina. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
